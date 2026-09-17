@@ -2,13 +2,14 @@ const mysql = require("mysql2/promise");
 
 const db = mysql.createPool({
     host: process.env.MYSQLHOST,
-    port: process.env.MYSQLPORT,
+    port: Number(process.env.MYSQLPORT || 3306),
     user: process.env.MYSQLUSER,
     password: process.env.MYSQLPASSWORD,
     database: process.env.MYSQLDATABASE,
 
     waitForConnections: true,
-    connectionLimit: 10
+    connectionLimit: 10,
+    charset: "utf8mb4"
 });
 
 module.exports = db;
