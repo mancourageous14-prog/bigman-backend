@@ -45,7 +45,7 @@ app.listen(3000, async () => {
         await db.query("SELECT 1");
         console.log("Connected to bigman_portfolio database!");
     } catch (error) {
-        console.error("Database connection failed:", error.message);
+        console.error("Database connection failed:", error);
     }
 
     console.log("Server is running on port 3000");
