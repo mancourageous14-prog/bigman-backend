@@ -1,11 +1,11 @@
 const mysql = require("mysql2/promise");
 
 const db = mysql.createPool({
-    host: process.env.DB_HOST || "127.0.0.1",
-    port: process.env.DB_PORT || 3307,
-    user: process.env.DB_USER || "root",
-    password: process.env.DB_PASSWORD || "",
-    database: process.env.DB_NAME || "bigman_portfolio",
+    host: process.env.MYSQLHOST,
+    port: process.env.MYSQLPORT,
+    user: process.env.MYSQLUSER,
+    password: process.env.MYSQLPASSWORD,
+    database: process.env.MYSQLDATABASE,
 
     waitForConnections: true,
     connectionLimit: 10
